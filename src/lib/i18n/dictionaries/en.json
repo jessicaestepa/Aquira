@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "Home",
+    "sell": "Sell your company",
+    "buyers": "Access deals",
+    "deals": "Deals",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Buy or sell private companies in Latin America",
+      "subtitle": "Akira helps founders explore liquidity and helps buyers access curated acquisition opportunities across Latin America.",
+      "cta_sell": "Sell your company",
+      "cta_buy": "Browse opportunities"
+    },
+    "how_it_works": {
+      "title": "How it works",
+      "step1_title": "Submit your profile",
+      "step1_desc": "Founders submit their company details. Buyers submit their acquisition criteria.",
+      "step2_title": "Akira reviews",
+      "step2_desc": "Our team qualifies every submission to ensure quality and relevance.",
+      "step3_title": "Access curated deals",
+      "step3_desc": "Qualified buyers get access to vetted acquisition opportunities.",
+      "step4_title": "Get introduced",
+      "step4_desc": "Akira facilitates relevant introductions between qualified parties."
+    },
+    "sellers": {
+      "title": "For sellers",
+      "subtitle": "Exploring a sale shouldn't be complicated. Akira gives you a confidential, structured way to connect with serious buyers.",
+      "benefit1": "Confidential process",
+      "benefit2": "Access to qualified buyers",
+      "benefit3": "Cross-border reach across Latin America and beyond"
+    },
+    "buyers": {
+      "title": "For buyers",
+      "subtitle": "Get access to acquisition opportunities you won't find on public marketplaces. Curated, cross-border, and LATAM-focused.",
+      "benefit1": "Curated LATAM opportunities",
+      "benefit2": "Relevant acquisition targets",
+      "benefit3": "Faster access to quality dealflow"
+    },
+    "benefits": {
+      "title": "Why Akira",
+      "b1_title": "LATAM focused",
+      "b1_desc": "Deep focus on Latin American private companies across key sectors.",
+      "b2_title": "Curated quality",
+      "b2_desc": "Every deal is reviewed and qualified before being shared with buyers.",
+      "b3_title": "Cross-border expertise",
+      "b3_desc": "Built for international transactions between LATAM and the US.",
+      "b4_title": "Founder-friendly",
+      "b4_desc": "Designed for founders who want a simple, confidential process."
+    },
+    "cta": {
+      "title": "Ready to explore?",
+      "subtitle": "Whether you're looking to sell or acquire, Akira is the simplest way to start.",
+      "cta_sell": "Submit your company",
+      "cta_buy": "Join as a buyer"
+    }
+  },
+  "sell": {
+    "title": "Sell your company",
+    "subtitle": "Tell us about your business. All information is kept confidential and only shared with qualified buyers with your consent.",
+    "fields": {
+      "full_name": "Full name",
+      "email": "Email",
+      "company_name": "Company name",
+      "website": "Website",
+      "country": "Country",
+      "business_type": "Business type",
+      "industry": "Industry",
+      "monthly_revenue": "Monthly revenue (USD)",
+      "monthly_profit": "Monthly profit (USD)",
+      "annual_revenue": "Annual revenue (USD, optional)",
+      "team_size": "Team size",
+      "asking_price": "Asking price (USD)",
+      "reason_for_selling": "Reason for selling",
+      "additional_notes": "Additional notes",
+      "consent": "I consent to Akira storing and processing this information to facilitate potential acquisition discussions."
+    },
+    "placeholders": {
+      "full_name": "Your full name",
+      "email": "you@company.com",
+      "company_name": "Your company name",
+      "website": "https://yourcompany.com",
+      "industry": "e.g., Logistics, Healthcare, Fintech",
+      "reason_for_selling": "Why are you considering a sale?",
+      "additional_notes": "Any other relevant information"
+    },
+    "note": "All submissions are confidential and reviewed manually.",
+    "success": "Your submission was received successfully. We will be in touch soon.",
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+  "buyers": {
+    "title": "Access deals",
+    "subtitle": "Tell us about your acquisition criteria. We'll match you with relevant opportunities from our curated pipeline.",
+    "fields": {
+      "full_name": "Full name",
+      "email": "Email",
+      "firm_name": "Firm name (optional)",
+      "buyer_type": "Buyer type",
+      "website_linkedin": "Website or LinkedIn (optional)",
+      "preferred_geographies": "Preferred geographies",
+      "preferred_sectors": "Preferred sectors",
+      "min_check_size": "Min check size (USD)",
+      "max_check_size": "Max check size (USD)",
+      "target_revenue_range": "Target revenue range",
+      "acquisition_interest": "What kind of acquisitions interest you?",
+      "additional_notes": "Additional notes",
+      "consent": "I consent to Akira storing and processing this information to facilitate deal access."
+    },
+    "placeholders": {
+      "full_name": "Your full name",
+      "email": "you@company.com",
+      "firm_name": "Your firm or fund name",
+      "website_linkedin": "https://linkedin.com/in/yourprofile",
+      "target_revenue_range": "e.g., $500K - $2M ARR",
+      "acquisition_interest": "Describe your ideal acquisition",
+      "additional_notes": "Any other relevant information"
+    },
+    "note": "Tell us what you are looking for and we will share relevant opportunities.",
+    "success": "Your submission was received successfully. We will be in touch soon.",
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+  "deals": {
+    "title": "Current opportunities",
+    "subtitle": "Browse curated acquisition opportunities across Latin America. Request an introduction to learn more about any deal.",
+    "empty": "No deals available at the moment. Check back soon.",
+    "request_intro": "Request details",
+    "revenue": "Monthly revenue",
+    "profit": "Monthly profit",
+    "asking": "Asking price",
+    "sector": "Sector",
+    "country": "Country"
+  },
+  "thank_you": {
+    "title": "Thank you",
+    "subtitle": "We've received your submission. Our team will review it and get back to you shortly.",
+    "back_home": "Back to home"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": "Akira (\"we\", \"us\", or \"our\") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal information.\n\n**Information we collect:** We collect information you provide through our forms, including your name, email, company details, and financial information relevant to potential transactions.\n\n**How we use it:** Your information is used solely to facilitate potential acquisition discussions between qualified parties. We do not sell your data.\n\n**Data storage:** Your data is stored securely using industry-standard encryption and access controls.\n\n**Confidentiality:** Company details submitted by sellers are only shared with qualified buyers and only with the seller's consent.\n\n**Contact:** For privacy-related questions, reach out to us at privacy@akira.lat\n\nLast updated: April 2026"
+  },
+  "footer": {
+    "tagline": "Curated acquisitions in Latin America.",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "select_country": "Select a country",
+    "select_type": "Select a type",
+    "countries": {
+      "mexico": "Mexico",
+      "brazil": "Brazil",
+      "colombia": "Colombia",
+      "chile": "Chile",
+      "argentina": "Argentina",
+      "peru": "Peru",
+      "other": "Other"
+    },
+    "business_types": {
+      "saas": "SaaS",
+      "ecommerce": "E-commerce",
+      "agency": "Agency",
+      "marketplace": "Marketplace",
+      "fintech": "Fintech",
+      "healthtech": "Healthtech",
+      "edtech": "Edtech",
+      "other": "Other"
+    },
+    "buyer_types": {
+      "search_fund": "Search fund",
+      "operator": "Operator",
+      "founder": "Founder",
+      "private_investor": "Private investor",
+      "family_office": "Family office",
+      "strategic_buyer": "Strategic buyer",
+      "private_equity": "Private equity",
+      "other": "Other"
+    },
+    "sectors": {
+      "saas": "SaaS",
+      "ecommerce": "E-commerce",
+      "fintech": "Fintech",
+      "healthtech": "Healthtech",
+      "edtech": "Edtech",
+      "marketplace": "Marketplace",
+      "agency": "Agency / Services",
+      "other": "Other"
+    },
+    "error": "Something went wrong. Please try again.",
+    "required": "This field is required."
+  }
+}

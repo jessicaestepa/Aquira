@@ -1,0 +1,78 @@
+-- Seed example deals for development
+insert into deals (company_code_name, title, country, sector, business_type, monthly_revenue, monthly_profit, annual_revenue, asking_price, summary, teaser, is_public, status)
+values
+  (
+    'Project Aurora',
+    'B2B SaaS platform for logistics management in Mexico',
+    'Mexico',
+    'SaaS',
+    'SaaS',
+    85000,
+    35000,
+    1020000,
+    3500000,
+    'Established B2B SaaS serving 120+ logistics companies across Mexico. Strong retention, growing MRR, and a clear expansion path into Central America.',
+    'Profitable SaaS with $85K MRR serving logistics companies in Mexico. 90%+ gross margins, 120+ customers, and 18 months of consecutive growth.',
+    true,
+    'live'
+  ),
+  (
+    'Project Condor',
+    'E-commerce brand in health supplements across LATAM',
+    'Colombia',
+    'E-commerce',
+    'E-commerce',
+    120000,
+    40000,
+    1440000,
+    2800000,
+    'Direct-to-consumer health supplements brand with strong presence in Colombia and expansion into Chile and Peru. High repeat purchase rate.',
+    'DTC health supplements brand with $120K monthly revenue. Operates in 3 LATAM markets with a loyal customer base and growing brand recognition.',
+    true,
+    'live'
+  ),
+  (
+    'Project Samba',
+    'Fintech API infrastructure for neobanks in Brazil',
+    'Brazil',
+    'Fintech',
+    'SaaS',
+    200000,
+    60000,
+    2400000,
+    7000000,
+    'API-first fintech infrastructure serving neobanks and financial institutions in Brazil. Regulated entity with key partnerships.',
+    'Fintech infrastructure company with $200K MRR. Serves 15+ financial institutions in Brazil with regulated API products and strong pipeline.',
+    true,
+    'live'
+  ),
+  (
+    'Project Puma',
+    'Software-enabled staffing agency for tech talent',
+    'Argentina',
+    'Software Services',
+    'Agency',
+    60000,
+    25000,
+    720000,
+    1200000,
+    'Software-enabled staffing and recruitment agency specializing in placing LATAM tech talent with US companies. Proprietary matching platform.',
+    'Tech staffing agency with proprietary platform. $60K MRR, 85% client retention, serving US companies with LATAM talent.',
+    true,
+    'live'
+  ),
+  (
+    'Project Inca',
+    'Edtech platform for professional certifications',
+    'Peru',
+    'Edtech',
+    'SaaS',
+    45000,
+    18000,
+    540000,
+    900000,
+    'Online education platform focused on professional certifications in finance and accounting across Spanish-speaking LATAM. Growing B2B channel.',
+    'Edtech platform with $45K MRR in professional certifications. Serving Peru, Colombia, and Chile with strong B2B pipeline.',
+    false,
+    'draft'
+  );

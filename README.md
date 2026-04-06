@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Akira
+
+A curated marketplace for acquiring private companies in Latin America.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + shadcn/ui
+- **Database:** Supabase (PostgreSQL)
+- **Deployment:** Vercel
+- **i18n:** Route-based locales (en, es, pt)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- npm
+- A [Supabase](https://supabase.com) project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/jessicaestepa/Akira.git
+cd Akira
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+```bash
+cp .env.local.example .env.local
+```
+
+Edit `.env.local` with your Supabase credentials and an admin password:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+ADMIN_PASSWORD=your-admin-password
+```
+
+### 4. Set up the database
+
+Run the SQL migration files in your Supabase SQL editor in order:
+
+1. `supabase/migrations/001_initial_schema.sql` — creates tables and indexes
+2. `supabase/migrations/002_seed_deals.sql` — inserts sample deals
+
+### 5. Run the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── [locale]/          # Public pages (en/es/pt)
+│   │   ├── page.tsx       # Home
+│   │   ├── sell/          # Seller form
+│   │   ├── buyers/        # Buyer form
+│   │   ├── deals/         # Public deals
+│   │   ├── thank-you/     # Confirmation
+│   │   └── privacy/       # Privacy policy
+│   ├── admin/             # Admin dashboard
+│   │   ├── sellers/       # Seller submissions
+│   │   ├── buyers/        # Buyer submissions
+│   │   └── deals/         # Deal management
+│   └── api/admin/login/   # Admin auth endpoint
+├── components/
+│   ├── ui/                # shadcn/ui components
+│   ├── layout/            # Navbar, Footer
+│   ├── forms/             # Seller & Buyer forms
+│   ├── deals/             # Deal card
+│   └── admin/             # Status badges
+├── lib/
+│   ├── supabase/          # Client & types
+│   ├── i18n/              # Config & dictionaries
+│   ├── schemas/           # Zod validation
+│   └── actions/           # Server actions
+```
 
-## Learn More
+## Deploying to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push to GitHub
+2. Import the repo in [Vercel](https://vercel.com)
+3. Add environment variables in the Vercel dashboard
+4. Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Admin Access
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Navigate to `/admin` and enter the password set in `ADMIN_PASSWORD`.
 
-## Deploy on Vercel
+## Localization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app supports three locales via route prefixes:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/en` — English
+- `/es` — Spanish
+- `/pt` — Portuguese
+
+Translation files are in `src/lib/i18n/dictionaries/`.
