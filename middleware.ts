@@ -37,8 +37,21 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect root to default locale
-  const locale = defaultLocale;
+  // Detect locale from browser Accept-Language header
+  const acceptLang = request.headers.get("accept-language") ?? "";
+  const preferred = acceptLang
+    .split(",")
+    .map((part) => part.split(";")[0].trim().toLowerCase());
+
+  const detected = preferred.find((lang) => {
+    const short = lang.slice(0, 2);
+    return locales.includes(short as (typeof locales)[number]);
+  });
+
+  const locale = detected
+    ? (detected.slice(0, 2) as (typeof locales)[number])
+    : defaultLocale;
+
   return NextResponse.redirect(
     new URL(`/${locale}${pathname}`, request.url)
   );
