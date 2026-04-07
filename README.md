@@ -1,4 +1,4 @@
-# Akira
+# Aquira
 
 A curated marketplace for acquiring private companies in Latin America.
 
@@ -22,8 +22,8 @@ A curated marketplace for acquiring private companies in Latin America.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/jessicaestepa/Akira.git
-cd Akira
+git clone https://github.com/jessicaestepa/Aquira.git
+cd Aquira
 ```
 
 ### 2. Install dependencies

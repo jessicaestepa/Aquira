@@ -51,9 +51,9 @@ export async function POST(request: Request) {
     const resend = getResend();
     if (resend && notificationEmail) {
       await resend.emails.send({
-        from: "Akira <onboarding@resend.dev>",
+        from: "Aquira <onboarding@resend.dev>",
         to: notificationEmail,
-        subject: "New buyer submission – Akira",
+        subject: "New buyer submission – Aquira",
         html: buyerEmailHtml(data),
       });
     }
