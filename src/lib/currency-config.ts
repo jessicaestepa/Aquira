@@ -142,6 +142,132 @@ const pen: CurrencyRanges = {
   },
 };
 
+const uyu: CurrencyRanges = {
+  code: "UYU",
+  symbol: "UYU$",
+  revenue: {
+    under_5k: "< UYU$200K",
+    "5k_20k": "UYU$200K – UYU$800K",
+    "20k_50k": "UYU$800K – UYU$2M",
+    "50k_plus": "UYU$2M+",
+  },
+  askingPrice: {
+    under_100k: "< UYU$4M",
+    "100k_250k": "UYU$4M – UYU$10M",
+    "250k_500k": "UYU$10M – UYU$20M",
+    "500k_1m": "UYU$20M – UYU$40M",
+    "1m_plus": "UYU$40M+",
+  },
+};
+
+const crc: CurrencyRanges = {
+  code: "CRC",
+  symbol: "₡",
+  revenue: {
+    under_5k: "< ₡2,5M",
+    "5k_20k": "₡2,5M – ₡10M",
+    "20k_50k": "₡10M – ₡26M",
+    "50k_plus": "₡26M+",
+  },
+  askingPrice: {
+    under_100k: "< ₡53M",
+    "100k_250k": "₡53M – ₡130M",
+    "250k_500k": "₡130M – ₡265M",
+    "500k_1m": "₡265M – ₡530M",
+    "1m_plus": "₡530M+",
+  },
+};
+
+const gtq: CurrencyRanges = {
+  code: "GTQ",
+  symbol: "Q",
+  revenue: {
+    under_5k: "< Q39K",
+    "5k_20k": "Q39K – Q155K",
+    "20k_50k": "Q155K – Q390K",
+    "50k_plus": "Q390K+",
+  },
+  askingPrice: {
+    under_100k: "< Q780K",
+    "100k_250k": "Q780K – Q2M",
+    "250k_500k": "Q2M – Q4M",
+    "500k_1m": "Q4M – Q8M",
+    "1m_plus": "Q8M+",
+  },
+};
+
+const dop: CurrencyRanges = {
+  code: "DOP",
+  symbol: "RD$",
+  revenue: {
+    under_5k: "< RD$290K",
+    "5k_20k": "RD$290K – RD$1,2M",
+    "20k_50k": "RD$1,2M – RD$2,9M",
+    "50k_plus": "RD$2,9M+",
+  },
+  askingPrice: {
+    under_100k: "< RD$5,8M",
+    "100k_250k": "RD$5,8M – RD$14,5M",
+    "250k_500k": "RD$14,5M – RD$29M",
+    "500k_1m": "RD$29M – RD$58M",
+    "1m_plus": "RD$58M+",
+  },
+};
+
+const hnl: CurrencyRanges = {
+  code: "HNL",
+  symbol: "L",
+  revenue: {
+    under_5k: "< L125K",
+    "5k_20k": "L125K – L500K",
+    "20k_50k": "L500K – L1,3M",
+    "50k_plus": "L1,3M+",
+  },
+  askingPrice: {
+    under_100k: "< L2,5M",
+    "100k_250k": "L2,5M – L6,3M",
+    "250k_500k": "L6,3M – L12,5M",
+    "500k_1m": "L12,5M – L25M",
+    "1m_plus": "L25M+",
+  },
+};
+
+const bob: CurrencyRanges = {
+  code: "BOB",
+  symbol: "Bs",
+  revenue: {
+    under_5k: "< Bs35K",
+    "5k_20k": "Bs35K – Bs140K",
+    "20k_50k": "Bs140K – Bs345K",
+    "50k_plus": "Bs345K+",
+  },
+  askingPrice: {
+    under_100k: "< Bs690K",
+    "100k_250k": "Bs690K – Bs1,7M",
+    "250k_500k": "Bs1,7M – Bs3,5M",
+    "500k_1m": "Bs3,5M – Bs6,9M",
+    "1m_plus": "Bs6,9M+",
+  },
+};
+
+const pyg: CurrencyRanges = {
+  code: "PYG",
+  symbol: "₲",
+  revenue: {
+    under_5k: "< ₲36M",
+    "5k_20k": "₲36M – ₲146M",
+    "20k_50k": "₲146M – ₲365M",
+    "50k_plus": "₲365M+",
+  },
+  askingPrice: {
+    under_100k: "< ₲730M",
+    "100k_250k": "₲730M – ₲1.825M",
+    "250k_500k": "₲1.825M – ₲3.650M",
+    "500k_1m": "₲3.650M – ₲7.300M",
+    "1m_plus": "₲7.300M+",
+  },
+};
+
 export const currencyByCountry: Record<string, CurrencyRanges> = {
   mexico: mxn,
   brazil: brl,
@@ -149,6 +275,17 @@ export const currencyByCountry: Record<string, CurrencyRanges> = {
   chile: clp,
   argentina: ars,
   peru: pen,
+  uruguay: uyu,
+  venezuela: usd,
+  ecuador: usd,
+  costa_rica: crc,
+  panama: usd,
+  guatemala: gtq,
+  el_salvador: usd,
+  dominican_republic: dop,
+  honduras: hnl,
+  bolivia: bob,
+  paraguay: pyg,
   other: usd,
 };
 

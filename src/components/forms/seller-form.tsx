@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { getCurrencyForCountry } from "@/lib/currency-config";
+import { countries, countryFlags, detectCountryFromBrowser } from "@/lib/countries";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import type { Locale } from "@/lib/i18n/config";
 
@@ -16,11 +17,6 @@ interface SellerFormProps {
   dict: Dictionary;
 }
 
-const countries = ["mexico", "brazil", "colombia", "chile", "argentina", "peru", "other"] as const;
-const countryFlags: Record<string, string> = {
-  mexico: "\u{1F1F2}\u{1F1FD}", brazil: "\u{1F1E7}\u{1F1F7}", colombia: "\u{1F1E8}\u{1F1F4}",
-  chile: "\u{1F1E8}\u{1F1F1}", argentina: "\u{1F1E6}\u{1F1F7}", peru: "\u{1F1F5}\u{1F1EA}", other: "\u{1F30E}",
-};
 const businessTypes = ["saas", "ecommerce", "agency", "marketplace", "fintech", "healthtech", "edtech", "other"] as const;
 const revenueRanges = ["pre_revenue", "under_5k", "5k_20k", "20k_50k", "50k_plus"] as const;
 const profitabilityOptions = ["profitable", "break_even", "not_profitable"] as const;
@@ -35,6 +31,11 @@ export function SellerForm({ locale, dict }: SellerFormProps) {
   const [success, setSuccess] = useState(false);
   const [consent, setConsent] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
+
+  useEffect(() => {
+    const detected = detectCountryFromBrowser();
+    if (detected) setSelectedCountry(detected);
+  }, []);
 
   const currency = getCurrencyForCountry(selectedCountry);
 
@@ -148,7 +149,7 @@ export function SellerForm({ locale, dict }: SellerFormProps) {
           <div className="flex flex-wrap gap-2">
             {countries.map((c) => (
               <label key={c} className="relative">
-                <input type="radio" name="country" value={c} required className="peer sr-only" onChange={() => setSelectedCountry(c)} />
+                <input type="radio" name="country" value={c} required className="peer sr-only" checked={selectedCountry === c} onChange={() => setSelectedCountry(c)} />
                 <span className="flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-md border border-input bg-background cursor-pointer transition-colors hover:bg-muted peer-checked:bg-primary peer-checked:text-primary-foreground peer-checked:border-primary">
                   <span>{countryFlags[c]}</span>
                   {dict.common.countries[c]}

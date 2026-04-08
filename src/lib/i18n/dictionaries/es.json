@@ -160,6 +160,17 @@
       "chile": "Chile",
       "argentina": "Argentina",
       "peru": "Perú",
+      "uruguay": "Uruguay",
+      "venezuela": "Venezuela",
+      "ecuador": "Ecuador",
+      "costa_rica": "Costa Rica",
+      "panama": "Panamá",
+      "guatemala": "Guatemala",
+      "el_salvador": "El Salvador",
+      "dominican_republic": "República Dominicana",
+      "honduras": "Honduras",
+      "bolivia": "Bolivia",
+      "paraguay": "Paraguay",
       "other": "Otro"
     },
     "business_types": {

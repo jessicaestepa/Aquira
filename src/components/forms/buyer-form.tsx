@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { countries, countryFlags, detectCountryFromBrowser } from "@/lib/countries";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import type { Locale } from "@/lib/i18n/config";
 
@@ -15,11 +16,6 @@ interface BuyerFormProps {
   dict: Dictionary;
 }
 
-const countries = ["mexico", "brazil", "colombia", "chile", "argentina", "peru", "other"] as const;
-const countryFlags: Record<string, string> = {
-  mexico: "\u{1F1F2}\u{1F1FD}", brazil: "\u{1F1E7}\u{1F1F7}", colombia: "\u{1F1E8}\u{1F1F4}",
-  chile: "\u{1F1E8}\u{1F1F1}", argentina: "\u{1F1E6}\u{1F1F7}", peru: "\u{1F1F5}\u{1F1EA}", other: "\u{1F30E}",
-};
 const sectors = ["saas", "ecommerce", "fintech", "healthtech", "edtech", "marketplace", "agency", "other"] as const;
 const buyerTypes = ["search_fund", "operator", "founder", "private_investor", "family_office", "strategic_buyer", "private_equity", "other"] as const;
 const checkSizeRanges = ["under_100k", "100k_250k", "250k_500k", "500k_1m", "1m_plus"] as const;
@@ -34,6 +30,11 @@ export function BuyerForm({ locale, dict }: BuyerFormProps) {
   const [consent, setConsent] = useState(false);
   const [selectedGeos, setSelectedGeos] = useState<string[]>([]);
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
+
+  useEffect(() => {
+    const detected = detectCountryFromBrowser();
+    if (detected) setSelectedGeos([detected]);
+  }, []);
 
   function toggleItem(arr: string[], item: string, setter: (v: string[]) => void) {
     setter(arr.includes(item) ? arr.filter((i) => i !== item) : [...arr, item]);
