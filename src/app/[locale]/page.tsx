@@ -57,8 +57,8 @@ export default async function HomePage({
     <div>
       {/* Hero */}
       <section className="relative py-20 sm:py-28 lg:py-36 overflow-hidden">
-        <LatamMap className="absolute right-[-2%] top-1/2 -translate-y-1/2 h-[115%] w-auto text-primary pointer-events-none select-none hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40 pointer-events-none" />
+        <LatamMap className="absolute right-[2%] top-1/2 -translate-y-1/2 h-[120%] w-auto text-primary pointer-events-none select-none hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30 pointer-events-none" />
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
