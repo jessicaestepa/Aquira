@@ -36,7 +36,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
         <div className="flex h-16 items-center justify-between">
           <Link
             href={`/${locale}`}
-            className="text-xl font-semibold tracking-tight"
+            className="text-2xl font-bold tracking-tight"
           >
             Aqüira
           </Link>
