@@ -55,64 +55,72 @@ export default async function HomePage({
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 sm:py-28 lg:py-36 overflow-hidden">
+      {/* Hero + How it works share one vertical wash so there is no hard color break */}
+      <div className="relative isolate overflow-x-clip">
         <div
-          className="absolute -right-24 top-1/4 h-72 w-72 rounded-full bg-primary/15 blur-3xl pointer-events-none"
           aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-background from-0% via-background via-[42%] to-primary/[0.055] to-100%"
         />
-        <LatamMap className="absolute right-[2%] top-1/2 -translate-y-1/2 h-[120%] w-auto text-primary/40 pointer-events-none select-none hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-primary/[0.06] pointer-events-none" />
 
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
-            {dict.home.hero.title}
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {dict.home.hero.subtitle}
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href={`/${locale}/sell`}
-              className={cn(buttonVariants({ size: "lg" }), "text-base px-8 gap-2")}
-            >
-              {dict.home.hero.cta_sell}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href={`/${locale}/deals`}
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "text-base px-8")}
-            >
-              {dict.home.hero.cta_buy}
-            </Link>
-          </div>
-        </div>
-      </section>
+        {/* Hero */}
+        <section className="relative py-20 sm:py-28 lg:py-36 overflow-hidden">
+          <div
+            className="absolute -right-24 top-1/4 h-72 w-72 rounded-full bg-primary/15 blur-3xl pointer-events-none"
+            aria-hidden
+          />
+          <LatamMap className="absolute right-[2%] top-1/2 -translate-y-1/2 h-[120%] w-auto text-primary/40 pointer-events-none select-none hidden md:block" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-transparent pointer-events-none" />
 
-      {/* How it works */}
-      <section className="py-20 bg-primary/[0.04]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-semibold text-center tracking-tight">
-            {dict.home.how_it_works.title}
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, i) => (
-              <div key={i} className="text-center">
-                <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <step.icon className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-xs font-medium text-muted-foreground mb-2">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <h3 className="font-medium text-lg">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
+          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
+              {dict.home.hero.title}
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              {dict.home.hero.subtitle}
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href={`/${locale}/sell`}
+                className={cn(buttonVariants({ size: "lg" }), "text-base px-8 gap-2")}
+              >
+                {dict.home.hero.cta_sell}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href={`/${locale}/deals`}
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "text-base px-8")}
+              >
+                {dict.home.hero.cta_buy}
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* How it works */}
+        <section className="relative py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-semibold text-center tracking-tight">
+              {dict.home.how_it_works.title}
+            </h2>
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {steps.map((step, i) => (
+                <div key={i} className="text-center">
+                  <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <step.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="text-xs font-medium text-muted-foreground mb-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-medium text-lg">{step.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* Trust section — two columns */}
       <section className="py-20">
