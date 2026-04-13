@@ -97,23 +97,26 @@ export function BuyerForm({ locale, dict }: BuyerFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-8 [&_label]:!text-base [&_input]:h-10 [&_input]:px-3 [&_input]:!text-base [&_select]:h-10 [&_select]:!text-base [&_textarea]:min-h-[128px] [&_textarea]:!text-base"
+    >
       <input type="hidden" name="locale" value={locale} />
 
-      <p className="text-sm text-muted-foreground border-l-2 border-primary/30 pl-3">
+      <p className="text-base text-muted-foreground border-l-[3px] border-primary/35 pl-4 py-0.5">
         {t.note}
       </p>
 
       {/* Step indicator */}
-      <div className="flex items-center gap-3">
-        <div className={`flex items-center gap-2 text-sm font-medium ${step === 1 ? "text-foreground" : "text-muted-foreground"}`}>
-          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step === 1 ? "bg-primary text-primary-foreground" : "bg-muted"}`}>1</span>
-          {t.step1_title}
+      <div className="flex items-center gap-4 sm:gap-6">
+        <div className={`flex items-center gap-3 text-base font-medium ${step === 1 ? "text-foreground" : "text-muted-foreground"}`}>
+          <span className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-sm font-semibold ${step === 1 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>1</span>
+          <span className="leading-tight">{t.step1_title}</span>
         </div>
-        <div className="h-px flex-1 bg-border" />
-        <div className={`flex items-center gap-2 text-sm font-medium ${step === 2 ? "text-foreground" : "text-muted-foreground"}`}>
-          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step === 2 ? "bg-primary text-primary-foreground" : "bg-muted"}`}>2</span>
-          {t.step2_title}
+        <div className="h-1 flex-1 min-w-8 rounded-full bg-gradient-to-r from-primary/45 via-primary/20 to-border" aria-hidden />
+        <div className={`flex items-center gap-3 text-base font-medium ${step === 2 ? "text-foreground" : "text-muted-foreground"}`}>
+          <span className={`w-10 h-10 shrink-0 rounded-full flex items-center justify-center text-sm font-semibold ${step === 2 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>2</span>
+          <span className="leading-tight">{t.step2_title}</span>
         </div>
       </div>
 
