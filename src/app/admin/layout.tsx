@@ -39,7 +39,7 @@ export default async function AdminLayout({
     return (
       <div className="min-h-screen">
         <main className="py-8">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">{children}</div>
+          <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">{children}</div>
         </main>
       </div>
     );
@@ -52,7 +52,7 @@ export default async function AdminLayout({
   return (
     <div className="min-h-screen flex flex-col">
       <nav className="border-b border-border bg-background">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center gap-8">
             <Link
               href="/admin"
@@ -106,12 +106,18 @@ export default async function AdminLayout({
                   </span>
                 )}
               </Link>
+              <Link
+                href="/admin/content"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Contenido
+              </Link>
             </div>
           </div>
         </div>
       </nav>
       <main className="flex-1 py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-8">
           {children}
         </div>
       </main>

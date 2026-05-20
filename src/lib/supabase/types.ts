@@ -182,6 +182,42 @@ export interface DealDiligenceRisk {
   updated_at: string;
 }
 
+export type ContentStatus = "idea" | "draft" | "scheduled" | "published" | "archived";
+
+export type ContentType =
+  | "linkedin"
+  | "newsletter"
+  | "blog"
+  | "video"
+  | "lp_update"
+  | "twitter"
+  | "other";
+
+export type ContentPillar =
+  | "thesis"
+  | "dealflow"
+  | "fundraising"
+  | "portfolio"
+  | "thought_leadership"
+  | "other";
+
+export interface ContentItem {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  title: string;
+  content_type: ContentType;
+  status: ContentStatus;
+  pillar: ContentPillar | null;
+  channel: string | null;
+  notes: string | null;
+  publish_url: string | null;
+  scheduled_for: string | null;
+  published_at: string | null;
+  tags: string[];
+  sort_order: number;
+}
+
 export interface Deal {
   id: string;
   created_at: string;
